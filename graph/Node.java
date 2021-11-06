@@ -1,7 +1,7 @@
 package com.dz_fs_dev.math.graph;
 
 /**
- * Generic representation of a data node such as a vertex on a graph.
+ * Generic representation of a data node.
  *
  * @author DZFSDev
  * @since 16.0.1
@@ -9,7 +9,7 @@ package com.dz_fs_dev.math.graph;
  *
  * @param <E> The type of data the node represents.
  */
-public class Node<E> {
+public abstract class Node<E> {
 	private E data;
 
 	/**
