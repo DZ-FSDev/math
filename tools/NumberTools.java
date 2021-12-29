@@ -18,21 +18,25 @@
  */
 package com.dz_fs_dev.math.tools;
 
+import java.math.BigDecimal;
+
 /**
  * Utility class containing common methods to process numbers.
  * 
  * @author DZ_FSDev
  * @since 17.0.1
- * @version 0.0.1
+ * @version 0.0.2
  */
 public final class NumberTools {
 	private NumberTools() {}
 	
 	/**
-	 * Performs a primality test; returns true if the specified number is prime and false otherwise.
+	 * Performs a primality test; returns true if the specified number is
+	 * prime and false otherwise.
 	 * 
 	 * @param number The specified number to undergo the primality test.
 	 * @return True if the specified number is prime and false otherwise.
+	 * @since 0.0.1
 	 */
 	public static boolean isPrime(long number) {
 		for(long i = 2; i < number; i = i % 2 == 1 ? 2 : 1) {
@@ -40,5 +44,25 @@ public final class NumberTools {
 		}
 		
 		return true;
+	}
+	
+	/**
+	 * Returns the significant figures in a specified BigDecimal.
+	 * 
+	 * @param decimal The specified BigDecimal.
+	 * @return The significant figures in a specified BigDecimal.
+	 * @since 0.0.2
+	 */
+	public static int calcSigFigs(BigDecimal decimal) {
+		int precision = decimal.precision();
+		int scale = decimal.scale();
+
+		if(scale > 0) {
+			return precision;
+		}else {
+			return decimal
+					.stripTrailingZeros()
+					.precision();
+		}
 	}
 }
