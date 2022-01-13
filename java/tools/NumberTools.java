@@ -25,27 +25,38 @@ import java.math.BigDecimal;
  * 
  * @author DZ_FSDev
  * @since 17.0.1
- * @version 0.0.2
+ * @version 0.0.3
  */
 public final class NumberTools {
-	private NumberTools() {}
-	
+	private NumberTools() {
+	}
+
 	/**
-	 * Performs a primality test; returns true if the specified number is
-	 * prime and false otherwise.
+	 * Performs a primality test; returns true if the specified number is prime and
+	 * false otherwise. Prime numbers belong to the set of all natural numbers
+	 * greater than 1. Such number cannot be built as a product of two smaller
+	 * positive natural numbers greater than 1.
 	 * 
 	 * @param number The specified number to undergo the primality test.
 	 * @return True if the specified number is prime and false otherwise.
-	 * @since 0.0.1
+	 * @since 0.0.3
 	 */
 	public static boolean isPrime(long number) {
-		for(long i = 2; i < number; i = i % 2 == 1 ? 2 : 1) {
-			if(number % i == 0) return false;
+		boolean isPrime = number > 3;
+		if (number <= 3)
+			isPrime = number > 1;
+
+		if ((number % 2 == 0) || (number % 3 == 0))
+			isPrime = false;
+
+		for (long i = 5; isPrime && i * i <= number; i += 6) {
+			if (number % i == 0 || number % (i + 2) == 0)
+				isPrime = false;
 		}
-		
-		return true;
+
+		return isPrime;
 	}
-	
+
 	/**
 	 * Returns the significant figures in a specified BigDecimal.
 	 * 
@@ -57,12 +68,10 @@ public final class NumberTools {
 		int precision = decimal.precision();
 		int scale = decimal.scale();
 
-		if(scale > 0) {
+		if (scale > 0) {
 			return precision;
-		}else {
-			return decimal
-					.stripTrailingZeros()
-					.precision();
+		} else {
+			return decimal.stripTrailingZeros().precision();
 		}
 	}
 }
