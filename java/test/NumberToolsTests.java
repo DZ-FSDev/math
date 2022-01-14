@@ -34,7 +34,15 @@ import org.springframework.test.annotation.Timed;
 class NumberToolsTests {
 
 	@ParameterizedTest
-	@CsvSource(value = {"1373:true", "123:false", "55:false", "1:true"}, delimiter = ':')
+	@CsvSource(value = {
+			"36028797018963913:true", 
+			"312679:true", 
+			"1373:true", 
+			"123:false", 
+			"55:false", 
+			"1:false", 
+			"0:false", 
+			"-5:false"}, delimiter = ':')
 	@Timed(millis = 100)
 	void isPrime_returns(long number, boolean isPrime) {
 		assertEquals(isPrime, NumberTools.isPrime(number));
