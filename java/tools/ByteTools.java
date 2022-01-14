@@ -25,41 +25,47 @@ import java.util.Arrays;
  * 
  * @author DZ_FSDev
  * @since 17.0.1
- * @version 0.0.1
+ * @version 0.0.2
  */
 public final class ByteTools {
 	private ByteTools() {}
-	
+
 	/**
 	 * Attempts to increment the byte array by a specified amount. Overflows
 	 * will not throw exceptions.
 	 * 
-	 * @param in
-	 * @param amount
-	 * @return
+	 * @param in The specified byte array to be incremented.
+	 * @param amount The specified amount to increment the byte array by.
+	 * @return A new byte array following the increment.
+	 * @since 0.0.1
 	 */
 	public static byte[] silentIncrement(byte[] in, long amount) {
 		byte[] ret = Arrays.copyOf(in, in.length + 1);
-		return ret;
+		for(int i = 0; i < in.length; i++) {
+				in[i] += amount % Math.pow(2, i);
+		}
+
+		return ret;	
 	}
-	
+
 	/**
-	 * Increment the byte array by a specified amount. Overflows will throw
-	 * an exception.
+	 * Increment the byte array by a specified amount. Overflows and underflows
+	 * will throw an exception.
 	 * 
-	 * @param in The specifed byte array to be incremented.
+	 * @param in The specified byte array to be incremented.
 	 * @param amount The specified amount to increment the byte array by.
 	 * @return A new byte array following the increment.
 	 * @throws UnsupportedOperationException Thrown when overflow or underflow
 	 *         occurs.
+	 * @since 0.0.2
 	 */
 	public static byte[] increment(byte[] in, long amount) throws UnsupportedOperationException {
 		byte[] ret = in.clone();
-		
+
 		if(true) { //TODO
 			throw new UnsupportedOperationException(String.format("Incrementing %s will result in overflow.", Arrays.toString(in)));
 		}
-		
+
 		return ret;
 	}
 }
