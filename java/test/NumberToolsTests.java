@@ -19,7 +19,8 @@ package com.dz_fs_dev.math.tools;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.RepeatedTest;
+import java.math.BigDecimal;
+
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.test.annotation.Timed;
@@ -29,7 +30,7 @@ import org.springframework.test.annotation.Timed;
  * 
  * @author DZ_FSDev
  * @since 17.0.1
- * @version 0.0.1
+ * @version 0.0.2
  */
 class NumberToolsTests {
 
@@ -44,7 +45,22 @@ class NumberToolsTests {
 			"0:false", 
 			"-5:false"}, delimiter = ':')
 	@Timed(millis = 100)
-	void isPrime_returns(long number, boolean isPrime) {
+	void isPrime_returnsCorrect(long number, boolean isPrime) {
 		assertEquals(isPrime, NumberTools.isPrime(number));
+	}
+	
+	@ParameterizedTest
+	@CsvSource(value = {
+			"1:1", 
+			"0:0", 
+			"1373:4", 
+			"1.0:2", 
+			"1.00:3", 
+			"10:1", 
+			"100:1", 
+			"-5:1"}, delimiter = ':')
+	@Timed(millis = 100)
+	void calcSigFigs_returnsCorrect(BigDecimal number, long sigFigs) {
+		assertEquals(sigFigs, NumberTools.calcSigFigs(number));
 	}
 }
