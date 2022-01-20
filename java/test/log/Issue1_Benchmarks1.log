@@ -1,0 +1,270 @@
+# JMH version: 1.34
+# VM version: JDK 17.0.1, Java HotSpot(TM) 64-Bit Server VM, 17.0.1+12-LTS-39
+# VM invoker: C:\Program Files\Java\jdk-17.0.1\bin\java.exe
+# VM options: -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: BenchmarkTester.SandboxBenchmark.log
+
+# Run progress: 0.00% complete, ETA 00:25:00
+# Fork: 1 of 5
+# Warmup Iteration   1: 77185555.327 ops/s
+# Warmup Iteration   2: 77294337.031 ops/s
+# Warmup Iteration   3: 78008523.808 ops/s
+# Warmup Iteration   4: 78175116.104 ops/s
+# Warmup Iteration   5: 78161363.029 ops/s
+Iteration   1: 78293537.288 ops/s
+Iteration   2: 78192838.181 ops/s
+Iteration   3: 77939098.647 ops/s
+Iteration   4: 78331768.004 ops/s
+Iteration   5: 78390606.219 ops/s
+
+# Run progress: 6.67% complete, ETA 00:23:26
+# Fork: 2 of 5
+# Warmup Iteration   1: 78322614.980 ops/s
+# Warmup Iteration   2: 78337075.330 ops/s
+# Warmup Iteration   3: 78275168.471 ops/s
+# Warmup Iteration   4: 78298461.133 ops/s
+# Warmup Iteration   5: 78182441.193 ops/s
+Iteration   1: 77787307.063 ops/s
+Iteration   2: 78263707.282 ops/s
+Iteration   3: 77892235.488 ops/s
+Iteration   4: 78194228.622 ops/s
+Iteration   5: 78063726.348 ops/s
+
+# Run progress: 13.33% complete, ETA 00:21:45
+# Fork: 3 of 5
+# Warmup Iteration   1: 78163368.317 ops/s
+# Warmup Iteration   2: 78164158.959 ops/s
+# Warmup Iteration   3: 77920423.460 ops/s
+# Warmup Iteration   4: 78134508.562 ops/s
+# Warmup Iteration   5: 78174666.646 ops/s
+Iteration   1: 78163219.862 ops/s
+Iteration   2: 78202949.051 ops/s
+Iteration   3: 77869080.979 ops/s
+Iteration   4: 77908733.562 ops/s
+Iteration   5: 78106531.881 ops/s
+
+# Run progress: 20.00% complete, ETA 00:20:05
+# Fork: 4 of 5
+# Warmup Iteration   1: 78032019.998 ops/s
+# Warmup Iteration   2: 77991859.712 ops/s
+# Warmup Iteration   3: 78312459.560 ops/s
+# Warmup Iteration   4: 78134502.035 ops/s
+# Warmup Iteration   5: 78173229.353 ops/s
+Iteration   1: 78197937.211 ops/s
+Iteration   2: 78156984.084 ops/s
+Iteration   3: 78245930.647 ops/s
+Iteration   4: 78294476.955 ops/s
+Iteration   5: 77535253.219 ops/s
+
+# Run progress: 26.67% complete, ETA 00:18:24
+# Fork: 5 of 5
+# Warmup Iteration   1: 78288967.763 ops/s
+# Warmup Iteration   2: 77867444.090 ops/s
+# Warmup Iteration   3: 78335124.230 ops/s
+# Warmup Iteration   4: 77928364.721 ops/s
+# Warmup Iteration   5: 78193616.085 ops/s
+Iteration   1: 78182237.122 ops/s
+Iteration   2: 78180614.171 ops/s
+Iteration   3: 78080170.132 ops/s
+Iteration   4: 78215948.346 ops/s
+Iteration   5: 78313424.644 ops/s
+
+
+Result "BenchmarkTester.SandboxBenchmark.log":
+  78120101.800 ±(99.9%) 148724.017 ops/s [Average]
+  (min, avg, max) = (77535253.219, 78120101.800, 78390606.219), stdev = 198542.308
+  CI (99.9%): [77971377.783, 78268825.818] (assumes normal distribution)
+
+
+# JMH version: 1.34
+# VM version: JDK 17.0.1, Java HotSpot(TM) 64-Bit Server VM, 17.0.1+12-LTS-39
+# VM invoker: C:\Program Files\Java\jdk-17.0.1\bin\java.exe
+# VM options: -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.dz_fs_dev.math.tools.ByteToolsBenchmarks.impl1
+
+# Run progress: 33.33% complete, ETA 00:16:44
+# Fork: 1 of 5
+# Warmup Iteration   1: 23961566.439 ops/s
+# Warmup Iteration   2: 24415288.364 ops/s
+# Warmup Iteration   3: 25300085.329 ops/s
+# Warmup Iteration   4: 24856128.463 ops/s
+# Warmup Iteration   5: 24901558.340 ops/s
+Iteration   1: 24957912.267 ops/s
+Iteration   2: 24826176.118 ops/s
+Iteration   3: 24932138.717 ops/s
+Iteration   4: 24835207.738 ops/s
+Iteration   5: 24426422.395 ops/s
+
+# Run progress: 40.00% complete, ETA 00:15:04
+# Fork: 2 of 5
+# Warmup Iteration   1: 24675253.402 ops/s
+# Warmup Iteration   2: 24343840.081 ops/s
+# Warmup Iteration   3: 23785920.895 ops/s
+# Warmup Iteration   4: 24386840.772 ops/s
+# Warmup Iteration   5: 26251509.812 ops/s
+Iteration   1: 24848847.949 ops/s
+Iteration   2: 24782326.689 ops/s
+Iteration   3: 24656455.664 ops/s
+Iteration   4: 25238523.984 ops/s
+Iteration   5: 24843577.448 ops/s
+
+# Run progress: 46.67% complete, ETA 00:13:23
+# Fork: 3 of 5
+# Warmup Iteration   1: 24720098.806 ops/s
+# Warmup Iteration   2: 24718360.476 ops/s
+# Warmup Iteration   3: 25013842.622 ops/s
+# Warmup Iteration   4: 25300316.034 ops/s
+# Warmup Iteration   5: 25167776.215 ops/s
+Iteration   1: 25245949.317 ops/s
+Iteration   2: 25130361.479 ops/s
+Iteration   3: 25115593.585 ops/s
+Iteration   4: 25140762.068 ops/s
+Iteration   5: 24867794.958 ops/s
+
+# Run progress: 53.33% complete, ETA 00:11:43
+# Fork: 4 of 5
+# Warmup Iteration   1: 24735444.770 ops/s
+# Warmup Iteration   2: 24425272.422 ops/s
+# Warmup Iteration   3: 24962581.428 ops/s
+# Warmup Iteration   4: 24990670.379 ops/s
+# Warmup Iteration   5: 25129194.063 ops/s
+Iteration   1: 24998954.861 ops/s
+Iteration   2: 26350455.538 ops/s
+Iteration   3: 25545869.497 ops/s
+Iteration   4: 26219770.186 ops/s
+Iteration   5: 26154346.248 ops/s
+
+# Run progress: 60.00% complete, ETA 00:10:02
+# Fork: 5 of 5
+# Warmup Iteration   1: 24775358.333 ops/s
+# Warmup Iteration   2: 24914918.824 ops/s
+# Warmup Iteration   3: 25210934.820 ops/s
+# Warmup Iteration   4: 24894008.448 ops/s
+# Warmup Iteration   5: 24782775.212 ops/s
+Iteration   1: 23965187.293 ops/s
+Iteration   2: 25776294.683 ops/s
+Iteration   3: 24909020.107 ops/s
+Iteration   4: 24083580.083 ops/s
+Iteration   5: 24533194.068 ops/s
+
+
+Result "com.dz_fs_dev.math.tools.ByteToolsBenchmarks.impl1":
+  25055388.918 ±(99.9%) 443038.431 ops/s [Average]
+  (min, avg, max) = (23965187.293, 25055388.918, 26350455.538), stdev = 591443.630
+  CI (99.9%): [24612350.486, 25498427.349] (assumes normal distribution)
+
+
+# JMH version: 1.34
+# VM version: JDK 17.0.1, Java HotSpot(TM) 64-Bit Server VM, 17.0.1+12-LTS-39
+# VM invoker: C:\Program Files\Java\jdk-17.0.1\bin\java.exe
+# VM options: -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.dz_fs_dev.math.tools.ByteToolsBenchmarks.impl2
+
+# Run progress: 66.67% complete, ETA 00:08:22
+# Fork: 1 of 5
+# Warmup Iteration   1: 53685002.748 ops/s
+# Warmup Iteration   2: 55773716.325 ops/s
+# Warmup Iteration   3: 54991004.330 ops/s
+# Warmup Iteration   4: 54623646.991 ops/s
+# Warmup Iteration   5: 55174928.729 ops/s
+Iteration   1: 54984291.351 ops/s
+Iteration   2: 55138411.594 ops/s
+Iteration   3: 54519510.094 ops/s
+Iteration   4: 55806127.959 ops/s
+Iteration   5: 55451087.860 ops/s
+
+# Run progress: 73.33% complete, ETA 00:06:41
+# Fork: 2 of 5
+# Warmup Iteration   1: 54346704.921 ops/s
+# Warmup Iteration   2: 54345434.561 ops/s
+# Warmup Iteration   3: 55070793.780 ops/s
+# Warmup Iteration   4: 54796184.835 ops/s
+# Warmup Iteration   5: 55087051.466 ops/s
+Iteration   1: 55741211.156 ops/s
+Iteration   2: 54612935.971 ops/s
+Iteration   3: 54999198.043 ops/s
+Iteration   4: 55151860.974 ops/s
+Iteration   5: 54679391.387 ops/s
+
+# Run progress: 80.00% complete, ETA 00:05:01
+# Fork: 3 of 5
+# Warmup Iteration   1: 58677044.587 ops/s
+# Warmup Iteration   2: 55802475.864 ops/s
+# Warmup Iteration   3: 56063687.678 ops/s
+# Warmup Iteration   4: 54726695.636 ops/s
+# Warmup Iteration   5: 54750487.935 ops/s
+Iteration   1: 54629358.923 ops/s
+Iteration   2: 54599262.767 ops/s
+Iteration   3: 52948042.142 ops/s
+Iteration   4: 55937949.581 ops/s
+Iteration   5: 55367482.056 ops/s
+
+# Run progress: 86.67% complete, ETA 00:03:20
+# Fork: 4 of 5
+# Warmup Iteration   1: 58973080.659 ops/s
+# Warmup Iteration   2: 56563362.066 ops/s
+# Warmup Iteration   3: 55536444.812 ops/s
+# Warmup Iteration   4: 55153072.510 ops/s
+# Warmup Iteration   5: 55260919.103 ops/s
+Iteration   1: 56146304.483 ops/s
+Iteration   2: 56909110.574 ops/s
+Iteration   3: 57045008.895 ops/s
+Iteration   4: 56363341.814 ops/s
+Iteration   5: 52433753.170 ops/s
+
+# Run progress: 93.33% complete, ETA 00:01:40
+# Fork: 5 of 5
+# Warmup Iteration   1: 60154840.397 ops/s
+# Warmup Iteration   2: 57284781.235 ops/s
+# Warmup Iteration   3: 57013483.362 ops/s
+# Warmup Iteration   4: 56455280.787 ops/s
+# Warmup Iteration   5: 55905380.590 ops/s
+Iteration   1: 55229580.665 ops/s
+Iteration   2: 55294267.291 ops/s
+Iteration   3: 54924661.015 ops/s
+Iteration   4: 54704680.105 ops/s
+Iteration   5: 54207786.071 ops/s
+
+
+Result "com.dz_fs_dev.math.tools.ByteToolsBenchmarks.impl2":
+  55112984.638 ±(99.9%) 773309.306 ops/s [Average]
+  (min, avg, max) = (52433753.170, 55112984.638, 57045008.895), stdev = 1032345.799
+  CI (99.9%): [54339675.332, 55886293.944] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:25:07
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                            Mode  Cnt         Score        Error  Units
+BenchmarkTester.SandboxBenchmark.log                thrpt   25  78120101.800 ± 148724.017  ops/s
+com.dz_fs_dev.math.tools.ByteToolsBenchmarks.impl1  thrpt   25  25055388.918 ± 443038.431  ops/s
+com.dz_fs_dev.math.tools.ByteToolsBenchmarks.impl2  thrpt   25  55112984.638 ± 773309.306  ops/s
