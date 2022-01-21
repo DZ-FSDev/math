@@ -28,32 +28,10 @@ import org.apache.commons.math.exception.NullArgumentException;
  * 
  * @author DZ_FSDev
  * @since 17.0.1
- * @version 0.0.3**
+ * @version 0.1.1
  */
 public final class ByteTools {
 	private ByteTools() {}
-
-	/**
-	 * Attempts to increment the byte array by a specified amount. Overflows
-	 * will not throw exceptions. If a null or empty byte array is specified,
-	 * this method will return the argument as is.
-	 * 
-	 * @param in The specified byte array to be incremented.
-	 * @param amount The specified amount to increment the byte array by.
-	 * @return A new byte array following the increment.
-	 * @since 0.0.3**
-	 */
-	public static byte[] silentIncrement(byte[] in, long amount) {
-		if(in == null || in.length == 0)return in;
-		byte[] ret = Arrays.copyOf(in, in.length);
-		for (int i = 0; i < in.length; i++) {
-			int change = (int) (amount % Math.pow(2, i + 1));
-			amount -= change;
-			ret[in.length - 1 - i] += change;
-		}
-
-		return ret;	
-	}
 	
 	/**
 	 * Attempts to increment the byte array by a specified amount. Overflows
@@ -63,9 +41,9 @@ public final class ByteTools {
 	 * @param in The specified byte array to be incremented.
 	 * @param amount The specified amount to increment the byte array by.
 	 * @return A new byte array following the increment.
-	 * @since 0.0.3**
+	 * @since 0.1.1
 	 */
-	public static byte[] silentIncrement2(byte[] in, long amount) {
+	public static byte[] silentIncrement(byte[] in, long amount) {
 		if(in == null || in.length == 0)return in;
 		
 		BigInteger bi = new BigInteger(in).add(BigInteger.valueOf(amount));
