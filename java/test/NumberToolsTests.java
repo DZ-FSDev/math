@@ -23,10 +23,10 @@ import java.math.BigDecimal;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.springframework.test.annotation.Timed;
 
 /**
- * Utility class containing common methods to process numbers.
+ * Contains a battery of tests to assess whether the {@link NumberTools} class
+ * conforms to requirements.
  * 
  * @author DZ_FSDev
  * @since 17.0.1
@@ -44,7 +44,6 @@ class NumberToolsTests {
 			"1:false", 
 			"0:false", 
 			"-5:false"}, delimiter = ':')
-	@Timed(millis = 100)
 	void isPrime_returnsCorrect(long number, boolean isPrime) {
 		assertEquals(isPrime, NumberTools.isPrime(number));
 	}
@@ -59,7 +58,6 @@ class NumberToolsTests {
 			"10:1", 
 			"100:1", 
 			"-5:1"}, delimiter = ':')
-	@Timed(millis = 100)
 	void calcSigFigs_returnsCorrect(BigDecimal number, long sigFigs) {
 		assertEquals(sigFigs, NumberTools.calcSigFigs(number));
 	}
