@@ -32,10 +32,10 @@ public final class NumberTools {
 	}
 
 	/**
-	 * Performs a primality test; returns true if the specified number is prime and
-	 * false otherwise. Prime numbers belong to the set of all natural numbers
-	 * greater than 1. Such number cannot be built as a product of two smaller
-	 * positive natural numbers greater than 1.
+	 * Performs a primality test; returns true if the specified number is prime
+	 * and false otherwise. Prime numbers belong to the set of all natural
+	 * numbers greater than 1. Such number cannot be built as a product of two
+	 * smaller positive natural numbers greater than 1.
 	 * 
 	 * @param number The specified number to undergo the primality test.
 	 * @return True if the specified number is prime and false otherwise.
@@ -46,15 +46,15 @@ public final class NumberTools {
 		if (number <= 3)
 			isPrime = number > 1;
 
-		if ((number % 2 == 0) || (number % 3 == 0))
-			isPrime = false;
-
-		for (long i = 5; isPrime && i * i <= number; i += 6) {
-			if (number % i == 0 || number % (i + 2) == 0)
+			if ((number % 2 == 0) || (number % 3 == 0))
 				isPrime = false;
-		}
 
-		return isPrime;
+			for (long i = 5; isPrime && i * i <= number; i += 6) {
+				if (number % i == 0 || number % (i + 2) == 0)
+					isPrime = false;
+			}
+
+			return isPrime;
 	}
 
 	/**
@@ -88,5 +88,21 @@ public final class NumberTools {
 			return 0;
 		else
 			return Math.abs(a * b) / gcd(a, b);
+	}
+
+	/**
+	 * Recursively finds the greatest common divisor using Euclid's Algorithm
+	 * for two numbers.
+	 * 
+	 * @param a The first number.
+	 * @param b The second number.
+	 * @return The greatest common divisor of the two numbers.
+	 * @since 0.0.5
+	 */
+	private static long gcd(long a, long b) {
+		if (b == 0) {
+			return a;
+		}
+		return gcd(b, a % b);
 	}
 }
