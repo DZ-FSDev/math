@@ -8,7 +8,7 @@ import java.lang.reflect.Array;
  * @param <T> The data type to be stored in this matrix. Must extend {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.3
+ * @version 0.0.4
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -61,6 +61,19 @@ public class Matrix<T extends Number> {
 	public Matrix<T> add(Matrix<T> augend) {
 		// TODO Not Implemented
 		return augend;
+		
+	}
+	
+	/**
+	 * 
+	 * 
+	 * @param subtrahend
+	 * @return
+	 * @since 0.0.4
+	 */
+	public Matrix<T> subtract(Matrix<T> subtrahend) {
+		// TODO Not Implemented
+		return subtrahend;
 		
 	}
 }
