@@ -25,7 +25,7 @@ import java.math.BigDecimal;
  * 
  * @author DZ_FSDev
  * @since 17.0.1
- * @version 0.0.3
+ * @version 0.0.4
  */
 public final class NumberTools {
 	private NumberTools() {
@@ -73,5 +73,20 @@ public final class NumberTools {
 		} else {
 			return decimal.stripTrailingZeros().precision();
 		}
+	}
+
+	/**
+	 * Finds the lowest common multiple of two numbers.
+	 * 
+	 * @param a The first number.
+	 * @param b The second number.
+	 * @return The lowest common multiple of the two numbers.
+	 * @since 0.0.4
+	 */
+	private static long lcm(long a, long b) {
+		if (a == 0 || b == 0)
+			return 0;
+		else
+			return Math.abs(a * b) / gcd(a, b);
 	}
 }
