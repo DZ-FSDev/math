@@ -76,4 +76,13 @@ public class Matrix<T extends Number> {
 		return subtrahend;
 		
 	}
+	
+	/**
+	 * @since 0.0.5
+	 */
+	@Override
+	public String toString() {
+		return ("Matrix [data=" + Arrays.deepToString(data) + "]")
+				.replace("], ", "\n").replace("]", "").replace("[", "");
+	}
 }
