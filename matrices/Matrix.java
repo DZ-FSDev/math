@@ -1,23 +1,48 @@
+/*  Original Licensing Copyright
+ * 
+ *  Represents an immutable Matrix of Numbers.
+ *  Copyright (C) 2022  DZ-FSDev
+ *  
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 package com.dz_fs_dev.math.matrices;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 /**
- * Represents a Matrix of {@link Number}s.
+ * Represents a Matrix of {@link Number}s. This implementation sports
+ * immutability in that all operations will produce a new instance of
+ * {@link Matrix}.
  * 
- * @param <T> The data type to be stored in this matrix. Must extend {@link Number}.
+ * @param <T> The data type to be stored in this matrix. Must extend
+ *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.4
+ * @version 0.0.5
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
 	
 	/**
-	 * Initializes a new instance of a Matrix of {@link Number}s.
+	 * Initializes a new instance of a Matrix of {@link Number}s of specified
+	 * dimensions.
 	 * 
-	 * @param rows The number of rows this matrix shall have. Cannot be less than 1.
-	 * @param columns The number of columns this matrix shall have. Cannot be less than 1.
+	 * @param rows The number of rows this matrix shall have. Cannot be less
+	 *             than 1.
+	 * @param columns The number of columns this matrix shall have. Cannot be
+	 *                less than 1.
 	 * @param fill The starting value to set all elements of the matrix to.
 	 *             Cannot be null.
 	 * @since 0.0.1
@@ -25,11 +50,14 @@ public class Matrix<T extends Number> {
 	@SuppressWarnings("unchecked")
 	public Matrix(int rows, int columns, Number fill) {
 		if(rows < 1)
-			throw new IllegalArgumentException("Rows cannot be less than 1 for a given matrix.");
+			throw new IllegalArgumentException(
+					"Rows cannot be less than 1 for a given matrix.");
 		if(columns < 1)
-			throw new IllegalArgumentException("Columns cannot be less than 1 for a given matrix.");
+			throw new IllegalArgumentException(
+					"Columns cannot be less than 1 for a given matrix.");
 		if(fill == null)
-			throw new NullPointerException("Matrix cannot be flled with null.");
+			throw new NullPointerException(
+					"Matrix cannot be flled with null.");
 			
 		data = (T[][]) Array.newInstance(fill.getClass(), columns, rows);
 		for(T[] x : data) {
@@ -37,8 +65,9 @@ public class Matrix<T extends Number> {
 				x[y] = (T) fill;
 		}
 	}
-	
-	/*
+
+
+	/**
 	 * 
 	 * @param data
 	 * @since 0.0.2
@@ -50,7 +79,7 @@ public class Matrix<T extends Number> {
 			// TODO Not Implemented
 		}
 	}
-
+	
 	/**
 	 * 
 	 * 
@@ -76,7 +105,7 @@ public class Matrix<T extends Number> {
 		return subtrahend;
 		
 	}
-	
+
 	/**
 	 * @since 0.0.5
 	 */
