@@ -8,7 +8,7 @@ import java.lang.reflect.Array;
  * @param <T> The data type to be stored in this matrix. Must extend {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.1
+ * @version 0.0.2
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -35,6 +35,19 @@ public class Matrix<T extends Number> {
 		for(T[] x : data) {
 			for(int y = 0; y < x.length; y++)
 				x[y] = (T) fill;
+		}
+	}
+	
+	/*
+	 * 
+	 * @param data
+	 * @since 0.0.2
+	 */
+	@SuppressWarnings("unchecked")
+	public Matrix(T[][] data) {
+		this.data = (T[][]) new Number[data.length][data[0].length];
+		for(T[] x : data) {
+			// TODO Not Implemented
 		}
 	}
 }
