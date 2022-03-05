@@ -30,7 +30,7 @@ import java.util.Arrays;
  *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.6
+ * @version 0.0.7
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -83,7 +83,17 @@ public class Matrix<T extends Number> {
 			}
 		}
 	}
-
+	
+	/**
+	 * Internal constructor.
+	 * 
+	 * @param data
+	 * @param sender
+	 * @since 0.0.7
+	 */
+	private Matrix(T[][] data, Matrix sender) {
+		this.data = data;
+	}
 	/**
 	 * 
 	 * 
