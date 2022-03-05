@@ -30,11 +30,11 @@ import java.util.Arrays;
  *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.5
+ * @version 0.0.6
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
-	
+
 	/**
 	 * Initializes a new instance of a Matrix of {@link Number}s of specified
 	 * dimensions.
@@ -58,7 +58,7 @@ public class Matrix<T extends Number> {
 		if(fill == null)
 			throw new NullPointerException(
 					"Matrix cannot be flled with null.");
-			
+
 		data = (T[][]) Array.newInstance(fill.getClass(), columns, rows);
 		for(T[] x : data) {
 			for(int y = 0; y < x.length; y++)
@@ -68,18 +68,22 @@ public class Matrix<T extends Number> {
 
 
 	/**
+	 * Initializes a new instance of a Matrix based off a 2D array of
+	 * {@link Number}s.
 	 * 
-	 * @param data
-	 * @since 0.0.2
+	 * @param data The data to initialize this Matrix with.
+	 * @since 0.0.6
 	 */
 	@SuppressWarnings("unchecked")
 	public Matrix(T[][] data) {
 		this.data = (T[][]) new Number[data.length][data[0].length];
-		for(T[] x : data) {
-			// TODO Not Implemented
+		for(int x = 0; x < data.length; x++) {
+			for(int y = 0; y < data[x].length; y++) {
+				this.data[x][y] = data[x][y];
+			}
 		}
 	}
-	
+
 	/**
 	 * 
 	 * 
@@ -90,9 +94,9 @@ public class Matrix<T extends Number> {
 	public Matrix<T> add(Matrix<T> augend) {
 		// TODO Not Implemented
 		return augend;
-		
+
 	}
-	
+
 	/**
 	 * 
 	 * 
@@ -103,7 +107,7 @@ public class Matrix<T extends Number> {
 	public Matrix<T> subtract(Matrix<T> subtrahend) {
 		// TODO Not Implemented
 		return subtrahend;
-		
+
 	}
 
 	/**
