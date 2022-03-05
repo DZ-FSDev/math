@@ -30,7 +30,7 @@ import java.util.Arrays;
  *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.7
+ * @version 0.0.8
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -83,7 +83,7 @@ public class Matrix<T extends Number> {
 			}
 		}
 	}
-	
+
 	/**
 	 * Internal constructor.
 	 * 
@@ -94,18 +94,29 @@ public class Matrix<T extends Number> {
 	private Matrix(T[][] data, Matrix sender) {
 		this.data = data;
 	}
+
 	/**
 	 * 
 	 * 
 	 * @param augend
 	 * @return
-	 * @since 0.0.3
+	 * @since 0.0.8
 	 */
+	@SuppressWarnings("unchecked")
 	public Matrix<T> add(Matrix<T> augend) {
-		// TODO Not Implemented
-		return augend;
+		@SuppressWarnings("unchecked")
+		T[][] newData = (T[][]) Array.newInstance(data[0][0].getClass(), data.length, data[0].length);
+
+		for(int x = 0; x < data.length; x++) {
+			for(int y = 0; y < data[x].length; y++) {
+				newData[x][y] = add(this.data[x][y], augend.data[x][y]);
+			}
+		}
+
+		return new Matrix<T>(newData, this);
 
 	}
+
 
 	/**
 	 * 
