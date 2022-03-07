@@ -111,10 +111,10 @@ public class Matrix<T extends Number> {
 	 * </ul>
 	 * 
 	 * @param <T> The type of the numbers to be added; must be a subclass of
-	 *            {@link Number}
+	 *            {@link Number}.
 	 * @param t The left augend in an add operation.
 	 * @param t2 The right augend in an add operation.
-	 * @return The sum of the add operation.
+	 * @return The sum of the operation.
 	 * @since 0.0.12
 	 */
 	@SuppressWarnings("unchecked")
@@ -138,11 +138,23 @@ public class Matrix<T extends Number> {
 	}
 	
 	/**
+	 * Subtracts a given pair of {@link Number}s. Supports major
+	 * implementations including:
+	 * <ul>
+	 *   <li>{@link Integer}
+	 *   <li>{@link Long}
+	 *   <li>{@link Float}
+	 *   <li>{@link Double}
+	 *   <li>{@link BigInteger}
+	 *   <li>{@link BigDecimal}
+	 *   <li>{@link Rational}
+	 * </ul>
 	 * 
-	 * @param <T>
-	 * @param t
-	 * @param t2
-	 * @return
+	 * @param <T> The type of the numbers to be subtracted; must be a subclass
+	 *            of {@link Number}.
+	 * @param t The left subtrahend of the subtract operation.
+	 * @param t2 The right subtrahend of the subtract operation.
+	 * @return The difference of the operation.
 	 * @since 0.0.15
 	 */
 	@SuppressWarnings("unchecked")
