@@ -32,7 +32,7 @@ import java.util.Arrays;
  *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.17
+ * @version 0.0.18
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -253,6 +253,25 @@ public class Matrix<T extends Number> {
 			}
 		}
 
+		return new Matrix<T>(newData, this);
+	}
+	
+	/**
+	 * Returns the transposition of this Matrix.
+	 * 
+	 * @return The transposition of this Matrix.
+	 * @since 0.0.18
+	 */
+	public Matrix<T> transpose(){
+		@SuppressWarnings("unchecked")
+		T[][] newData = (T[][]) Array.newInstance(data[0][0].getClass(), data[0].length, data.length);
+
+		for(int x = 0; x < data.length; x++) {
+			for(int y = 0; y < data[x].length; y++) {
+				newData[y][x] = data[x][y];
+			}
+		}
+		
 		return new Matrix<T>(newData, this);
 	}
 
