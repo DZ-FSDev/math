@@ -32,7 +32,7 @@ import java.util.Arrays;
  *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.13
+ * @version 0.0.15
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -124,6 +124,34 @@ public class Matrix<T extends Number> {
 		throw new UnsupportedOperationException(
 				String.format("%s adding is not supported.", t.getClass()));
 	}
+	
+	/**
+	 * 
+	 * @param <T>
+	 * @param t
+	 * @param t2
+	 * @return
+	 * @since 0.0.15
+	 */
+	@SuppressWarnings("unchecked")
+	private static <T extends Number> T subtract(T t, T t2) {
+		if(t instanceof Long)
+			return (T)Long.valueOf(t.longValue() - t2.longValue());
+		else if(t instanceof Integer)
+			return (T)Integer.valueOf(t.intValue() - t2.intValue());
+		else if(t instanceof Float)
+			return (T)Float.valueOf(t.intValue() - t2.intValue());
+		else if(t instanceof Double)
+			return (T)Double.valueOf(t.intValue() - t2.intValue());
+		else if(t instanceof BigInteger)
+			return (T)(((BigInteger)t).subtract((BigInteger)t2));
+		else if(t instanceof BigDecimal)
+			return (T)(((BigDecimal)t).subtract((BigDecimal)t2));
+		else if(t instanceof Rational)
+			return (T)(((Rational)t).subtract((Rational)t2));
+		throw new UnsupportedOperationException(
+				String.format("%s adding is not supported.", t.getClass()));
+	}
 
 	/**
 	 * 
@@ -144,7 +172,6 @@ public class Matrix<T extends Number> {
 
 		return new Matrix<T>(newData, this);
 	}
-
 
 	/**
 	 * 
