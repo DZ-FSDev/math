@@ -30,7 +30,7 @@ import java.util.Arrays;
  *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.9
+ * @version 0.0.10
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -101,14 +101,18 @@ public class Matrix<T extends Number> {
 	 * @param t
 	 * @param t2
 	 * @return
-	 * @since 0.0.9
+	 * @since 0.0.10
 	 */
 	@SuppressWarnings("unchecked")
 	private static <T extends Number> T add(T t, T t2) {
 		if(t instanceof Long)
 			return (T)Long.valueOf(t.longValue() + t2.longValue());
 		else if(t instanceof Integer)
-			return t.intValue() + t2.intValue();
+			return (T)Integer.valueOf(t.intValue() + t2.intValue());
+		else if(t instanceof Float)
+			return (T)Float.valueOf(t.intValue() + t2.intValue());
+		else if(t instanceof Double)
+			return (T)Double.valueOf(t.intValue() + t2.intValue());
 		throw new UnsupportedOperationException(
 				String.format("%s adding is not supported.", t.getClass()));
 	}
