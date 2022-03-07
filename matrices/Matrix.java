@@ -32,7 +32,7 @@ import java.util.Arrays;
  *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.15
+ * @version 0.0.16
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -191,6 +191,24 @@ public class Matrix<T extends Number> {
 		for(int x = 0; x < data.length; x++) {
 			for(int y = 0; y < data[x].length; y++) {
 				newData[x][y] = add(this.data[x][y], augend.data[x][y]);
+			}
+		}
+
+		return new Matrix<T>(newData, this);
+	}
+	
+	/**
+	 * 
+	 * @param scalar
+	 * @return
+	 * @since 0.0.16
+	 */
+	public Matrix<T> add(T scalar) {
+		T[][] newData = (T[][]) Array.newInstance(data[0][0].getClass(), data.length, data[0].length);
+
+		for(int x = 0; x < data.length; x++) {
+			for(int y = 0; y < data[x].length; y++) {
+				newData[x][y] = add(this.data[x][y], scalar);
 			}
 		}
 
