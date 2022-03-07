@@ -98,11 +98,23 @@ public class Matrix<T extends Number> {
 	}
 
 	/**
+	 * Adds a given pair of {@link Number}s. Supports major implementations
+	 * including:
+	 * <ul>
+	 *   <li>{@link Integer}
+	 *   <li>{@link Long}
+	 *   <li>{@link Float}
+	 *   <li>{@link Double}
+	 *   <li>{@link BigInteger}
+	 *   <li>{@link BigDecimal}
+	 *   <li>{@link Rational}
+	 * </ul>
 	 * 
-	 * @param <T>
-	 * @param t
-	 * @param t2
-	 * @return
+	 * @param <T> The type of the numbers to be added; must be a subclass of
+	 *            {@link Number}
+	 * @param t The left augend in an add operation.
+	 * @param t2 The right augend in an add operation.
+	 * @return The sum of the add operation.
 	 * @since 0.0.12
 	 */
 	@SuppressWarnings("unchecked")
