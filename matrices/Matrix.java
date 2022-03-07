@@ -19,6 +19,8 @@
 package com.dz_fs_dev.math.matrices;
 
 import java.lang.reflect.Array;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Arrays;
 
 /**
@@ -30,7 +32,7 @@ import java.util.Arrays;
  *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.10
+ * @version 0.0.11
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -101,7 +103,7 @@ public class Matrix<T extends Number> {
 	 * @param t
 	 * @param t2
 	 * @return
-	 * @since 0.0.10
+	 * @since 0.0.11
 	 */
 	@SuppressWarnings("unchecked")
 	private static <T extends Number> T add(T t, T t2) {
@@ -113,6 +115,10 @@ public class Matrix<T extends Number> {
 			return (T)Float.valueOf(t.intValue() + t2.intValue());
 		else if(t instanceof Double)
 			return (T)Double.valueOf(t.intValue() + t2.intValue());
+		else if(t instanceof BigInteger)
+			return (T)(((BigInteger)t).add((BigInteger)t2));
+		else if(t instanceof BigDecimal)
+			return (T)(((BigDecimal)t).add((BigDecimal)t2));
 		throw new UnsupportedOperationException(
 				String.format("%s adding is not supported.", t.getClass()));
 	}
