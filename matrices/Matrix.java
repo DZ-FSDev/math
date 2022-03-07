@@ -32,7 +32,7 @@ import java.util.Arrays;
  *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.11
+ * @version 0.0.12
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -93,7 +93,7 @@ public class Matrix<T extends Number> {
 	 * @param sender
 	 * @since 0.0.7
 	 */
-	private Matrix(T[][] data, Matrix sender) {
+	private Matrix(T[][] data, Matrix<T> sender) {
 		this.data = data;
 	}
 
@@ -103,7 +103,7 @@ public class Matrix<T extends Number> {
 	 * @param t
 	 * @param t2
 	 * @return
-	 * @since 0.0.11
+	 * @since 0.0.12
 	 */
 	@SuppressWarnings("unchecked")
 	private static <T extends Number> T add(T t, T t2) {
@@ -119,6 +119,8 @@ public class Matrix<T extends Number> {
 			return (T)(((BigInteger)t).add((BigInteger)t2));
 		else if(t instanceof BigDecimal)
 			return (T)(((BigDecimal)t).add((BigDecimal)t2));
+		else if(t instanceof Rational)
+			return (T)(((Rational)t).add((Rational)t2));
 		throw new UnsupportedOperationException(
 				String.format("%s adding is not supported.", t.getClass()));
 	}
