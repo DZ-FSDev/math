@@ -32,7 +32,7 @@ import java.util.Arrays;
  *            {@link Number}.
  * @author DZ-FSDev
  * @since 17.0.2
- * @version 0.0.12
+ * @version 0.0.13
  */
 public class Matrix<T extends Number> {
 	private T[][] data;
@@ -134,7 +134,6 @@ public class Matrix<T extends Number> {
 	 */
 	@SuppressWarnings("unchecked")
 	public Matrix<T> add(Matrix<T> augend) {
-		@SuppressWarnings("unchecked")
 		T[][] newData = (T[][]) Array.newInstance(data[0][0].getClass(), data.length, data[0].length);
 
 		for(int x = 0; x < data.length; x++) {
@@ -144,7 +143,6 @@ public class Matrix<T extends Number> {
 		}
 
 		return new Matrix<T>(newData, this);
-
 	}
 
 
@@ -153,12 +151,19 @@ public class Matrix<T extends Number> {
 	 * 
 	 * @param subtrahend
 	 * @return
-	 * @since 0.0.4
+	 * @since 0.0.13
 	 */
+	@SuppressWarnings("unchecked")
 	public Matrix<T> subtract(Matrix<T> subtrahend) {
-		// TODO Not Implemented
-		return subtrahend;
+		T[][] newData = (T[][]) Array.newInstance(data[0][0].getClass(), data.length, data[0].length);
 
+		for(int x = 0; x < data.length; x++) {
+			for(int y = 0; y < data[x].length; y++) {
+				newData[x][y] = subtract(this.data[x][y], subtrahend.data[x][y]);
+			}
+		}
+
+		return new Matrix<T>(newData, this);
 	}
 
 	/**
