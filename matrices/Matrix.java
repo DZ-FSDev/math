@@ -178,10 +178,11 @@ public class Matrix<T extends Number> {
 	}
 
 	/**
+	 * Performs matrix addition and returns a new instance representing the
+	 * sum.
 	 * 
-	 * 
-	 * @param augend
-	 * @return
+	 * @param augend The right operand of the matrix addition.
+	 * @return A new instance of Matrix representing the sum.
 	 * @since 0.0.8
 	 */
 	@SuppressWarnings("unchecked")
